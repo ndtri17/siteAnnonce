@@ -11,17 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+        });
+
         // Create posts table
         Schema::create('posts', function (Blueprint $table) { 
             $table->id(); 
             $table->string('title');
-            $table->string('categorie');
             $table->text('description'); 
             $table->string('location');
             $table->integer('price'); 
             $table->timestamps();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
         });
+
 
         // Create post_images table
         Schema::create('post_images', function (Blueprint $table){ 
@@ -37,6 +43,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); 
             $table->timestamps();
         });
+
     }
 
     /**
@@ -47,5 +54,6 @@ return new class extends Migration
         Schema::dropIfExists('likes');      
         Schema::dropIfExists('post_images'); 
         Schema::dropIfExists('posts'); 
+        Schema::dropIfExists('categories');
     }
 };

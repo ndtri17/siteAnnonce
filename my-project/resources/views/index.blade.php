@@ -118,43 +118,30 @@
                 height: 100px;         
                 padding-top: 1rem;
                 padding-left: 1rem;'>
-                <div class="caption font-bold">Vacances</div>
+                <div class="caption font-bold">Immobilier</div>
             </div>
             <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
                 style='width: calc(25% - 20px);
                 height: 100px;         
                 padding-top: 1rem;
                 padding-left: 1rem;'>
-                <div class="caption font-bold">Astuces Maison</div>
+                <div class="caption font-bold">Véhicules </div>
             </div>
             <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
                 style='width: calc(25% - 20px);
                 height: 100px;         
                 padding-top: 1rem;
                 padding-left: 1rem;'>
-                <div class="caption font-bold">Offres d'emploi</div>
+                <div class="caption font-bold">Emploi</div>
             </div>
             <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
                 style='width: calc(25% - 20px);
                 height: 100px;         
                 padding-top: 1rem;
                 padding-left: 1rem;'>
-                <div class="caption font-bold">Ventes immo</div>
+                <div class="caption font-bold">Électronique</div>
             </div>
-            <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
-                style='width: calc(25% - 20px);
-                height: 100px;         
-                padding-top: 1rem;
-                padding-left: 1rem;'>
-                <div class="caption font-bold">Voitures</div>
-            </div>
-            <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
-                style='width: calc(25% - 20px);
-                height: 100px;         
-                padding-top: 1rem;
-                padding-left: 1rem;'>
-                <div class="caption font-bold">Ameublement</div>
-            </div>
+
             <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
                 style='width: calc(25% - 20px);
                 height: 100px;         
@@ -162,31 +149,17 @@
                 padding-left: 1rem;'>
                 <div class="caption font-bold">Electroménager</div>
             </div>
-            <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
-                style='width: calc(25% - 20px);
-                height: 100px;         
-                padding-top: 1rem;
-                padding-left: 1rem;'>
-                <div class="caption font-bold">Décoration</div>
-            </div>
-            <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
-                style='width: calc(25% - 20px);
-                height: 100px;         
-                padding-top: 1rem;
-                padding-left: 1rem;'>
-                <div class="caption font-bold">Ordinateur</div>
-            </div>
-            <div class="rounded-lg bg-orange-100 cursor-pointer transform hover:scale-105 transition duration-300"
-                style='width: calc(25% - 20px);
-                height: 100px;         
-                padding-top: 1rem;
-                padding-left: 1rem;'>
-                <div class="caption font-bold">Livre</div>
-            </div>
+
             <div class="flex items-center m-8">
                 <a href='/' class="text-gray-500 hover:text-black">Voir tous</a>
             </div>
         </div>
+    </div>
+
+    <div>
+        @foreach ($categories as $category) 
+            <h2 class="my-8 text-2xl">{{ $category->name}}</h2>
+        @endforeach
     </div>
 
 </body>

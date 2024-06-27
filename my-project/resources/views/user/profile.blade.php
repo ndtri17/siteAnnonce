@@ -111,6 +111,7 @@
         </div>
 
         <div class="bg-white p-6 rounded shadow-md mt-6">
+            <h2 class="text-xl font-bold mb-4">Annonces</h2>
             <ul>
                 @foreach ($posts as $post)
                     <li class="mb-2">{{$post->title}}

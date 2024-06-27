@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="categorie" class="block text-sm font-bold text-gray-700">Catégo     rie *</label>
+                    <label for="categorie" class="block text-sm font-bold text-gray-700">Catégorie *</label>
                     <select id="categorie" name="categorie" required class="w-full p-2 border border-gray-300 rounded mt-1">
                         <option value="">Sélectionner une catégorie</option>
                         <option value="immobilier">Immobilier</option>
