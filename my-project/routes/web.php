@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\Forgot_passwordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostMainController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
@@ -31,3 +32,5 @@ Route::post('/delete',[LogoutController::class, 'deleteUser'])->name('deleteUser
 
 Route::get('/post',[PostController::class, 'display'])->name('post');
 Route::post('/post',[PostController::class, 'postArticle']);
+
+Route::get('/post_main',[PostMainController::class, 'display'])->name('post_main');

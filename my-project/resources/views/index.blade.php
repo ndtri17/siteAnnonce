@@ -72,27 +72,27 @@
 
     <div class="flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-white">
         @auth
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Immobilier</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Véhicules</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Locations de vacances</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Emploi</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Mode</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Maison & Jardin</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Famille</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Électronique</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Loisirs</a>
-        <a href="#" class="mx-4 text-gray-700 hover:text-black">Autres</a>
-        @else 
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Immobilier</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Véhicules</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Locations de vacances</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Emploi</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Mode</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Maison & Jardin</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Famille</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Électronique</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Loisirs</a>
-        <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Autres</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Immobilier</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Véhicules</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Locations de vacances</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Emploi</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Mode</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Maison & Jardin</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Famille</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Électronique</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Loisirs</a>
+            <a href="#" class="mx-4 text-gray-700 hover:text-black">Autres</a>
+        @else
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Immobilier</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Véhicules</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Locations de vacances</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Emploi</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Mode</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Maison & Jardin</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Famille</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Électronique</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Loisirs</a>
+            <a href="{{ route('login') }}" class="mx-4 text-gray-700 hover:text-black">Autres</a>
         @endauth
     </div>
 
@@ -151,15 +151,13 @@
             </div>
 
             <div class="flex items-center m-8">
-                <a href='/' class="text-gray-500 hover:text-black">Voir tous</a>
+                @auth
+                <a href='{{ route('post_main') }}' class="text-gray-500 hover:text-black">Voir tous</a>
+                @else
+                <a href='{{ route('login') }}' class="text-gray-500 hover:text-black">Voir tous</a>
+                @endauth
             </div>
         </div>
-    </div>
-
-    <div>
-        @foreach ($categories as $category) 
-            <h2 class="my-8 text-2xl">{{ $category->name}}</h2>
-        @endforeach
     </div>
 
 </body>

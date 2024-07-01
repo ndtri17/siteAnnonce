@@ -1,9 +1,10 @@
-    <?php
+<?php
 
     namespace App\Http\Controllers;
 
     use Illuminate\Http\Request;
     use App\Models\Post;
+    use App\Models\Category;
     use App\Models\PostImage;
     use Illuminate\Support\Facades\Auth;
 
@@ -14,6 +15,12 @@
             return view('user.post');
         }
 
+        public function PostToIndex()
+        {
+            $categories = Category::get();
+            return view('index', compact('categories'));
+        }
+
         public function postArticle(Request $request)
         {
             $validateData = $request->validate([
@@ -21,7 +28,7 @@
                 'description' => 'required|string|max:500',
                 'location' => 'required|string',
                 'price' => 'required|integer',
-                'category_id' => 'required|exists:category,id',
+                'category' => 'required',
                 'photos.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             ]);
 
@@ -30,7 +37,7 @@
                 'description' => $validateData['description'],
                 'location' => $validateData['location'],
                 'price' => $validateData['price'],
-                'category_id' => $validateData['category_id'],
+                'category' => $validateData['category'],
                 'user_id' => Auth::id(),
             ]);
 
